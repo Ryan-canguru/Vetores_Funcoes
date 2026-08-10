@@ -1,24 +1,44 @@
 using System;
 
 class Atividade1
-{
-    static void Main()
+{   
+    static void Vetor(int[] vetor)
     {
-        int[] numeros = new int[10];
-        int soma = 0;
-
         Console.WriteLine("Entre com os valores do vetor:");
-        for(int i = 0; i< numeros.Length; i++)
+        for(int i = 0; i< vetor.Length; i++)
         {   
             Console.Write($"[{i}] : ");
-            numeros[i] = int.Parse(Console.ReadLine()!);
+            vetor[i] = int.Parse(Console.ReadLine()!);
         }
-
+    }
+    static void Soma(int[] numeros, int soma)
+    {
         for(int i = 0; i< numeros.Length; i++)
         {   
             soma+= numeros[i];
         }
         
         Console.WriteLine("A soma do vetor: " + soma);
+    }
+    static void Valores(int[] valores)
+    {
+        Console.WriteLine("O números do vetor são: ");
+
+        for(int i = 0; i< valores.Length; i++)
+            {
+                Console.Write("|" + valores[i]);
+            }
+        Console.Write("|");
+        Console.Write("\n");
+    }
+    static void Main()
+    {
+        int[] numeros = new int[10];
+        Vetor(numeros);        
+        Valores(numeros);
+
+        int soma = 0;
+        Soma(numeros, soma);
+        
     }
 }
